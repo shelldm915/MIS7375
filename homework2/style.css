@@ -1,0 +1,356 @@
+/*
+Program name: style.css
+Author: Sheldon McNeal
+Date created: 09/27/2026
+Date last edited: 10/23/2026
+Version: 2.0
+Description: External style sheet for MIS 7375 Homework 2 (homework2.html and thankyou.html).
+             Version 2.0 adds styles for error messages, the review area, the slider value
+             and the live password checklist.
+             Shows element, ID, class, and name/attribute selectors, plus link and visited-link colors.
+AI disclosure: Drafted with assistance from Claude (Anthropic); reviewed and edited by Sheldon McNeal.
+*/
+
+/* ---------- ELEMENT (tag) selectors ---------- */
+
+body {
+    background-color: #EEF3F7;      /* light blue-gray page background, not the default white */
+    color: #243447;                 /* dark slate body text */
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #FFFFFF;
+    font-size: 30px;
+    margin: 0;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1F3A5F;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 6px 8px;
+    vertical-align: middle;
+}
+
+input, select, textarea {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    padding: 4px;
+    border: 1px solid #9FB3C8;
+    border-radius: 4px;
+}
+
+textarea {
+    margin-top: 4px;
+}
+
+/* ---------- ID selectors ---------- */
+
+#banner {
+    background-color: #1F3A5F;      /* navy header bar */
+    padding: 10px 20px;
+    border-bottom: 5px solid #2A9D8F;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+}
+
+#main {
+    background-color: #FFFFFF;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px 25px 25px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+#footer {
+    background-color: #1F3A5F;
+    color: #DCE6F1;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 13px;
+    padding: 12px 20px;
+    border-top: 5px solid #2A9D8F;
+}
+
+#today {
+    font-weight: bold;
+}
+
+/* ---------- CLASS selectors ---------- */
+
+.layout {
+    width: 100%;                    /* banner and footer tables stretch across the page */
+}
+
+.banner-logo {
+    width: 90px;
+}
+
+.banner-date {
+    text-align: right;
+    color: #FFFFFF;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.tagline {
+    color: #BFE3DE;
+    font-style: italic;
+    margin: 2px 0 0 0;
+}
+
+.instructions {
+    color: #555555;
+    font-size: 12px;
+}
+
+.form-table {
+    width: 100%;
+}
+
+.section-title {
+    background-color: #DCE6F1;
+    color: #1F3A5F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    text-align: left;
+    padding: 6px 8px;
+    border-left: 5px solid #2A9D8F;
+}
+
+.req {
+    color: #C0392B;                 /* red asterisk for required fields */
+    font-weight: bold;
+}
+
+.wide {
+    width: 95%;
+}
+
+.short {
+    width: 90px;
+}
+
+.tiny {
+    width: 24px;
+    text-align: center;
+}
+
+.scale-end {
+    font-size: 12px;
+    color: #555555;
+}
+
+.footer-contact {
+    text-align: center;
+}
+
+.footer-social {
+    text-align: right;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #2A9D8F;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Element + class combined: only table cells that hold the buttons */
+td.button-cell {
+    text-align: center;
+    padding-top: 18px;
+}
+
+/* ---------- NAME / ATTRIBUTE selectors ---------- */
+
+input[name="ssn"] {
+    letter-spacing: 2px;            /* spreads out the hidden dots so the count is easier to see */
+}
+
+input[name="pain_level"] {
+    width: 220px;
+    vertical-align: middle;
+}
+
+input[type="submit"] {
+    background-color: #1F3A5F;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    background-color: #FFFFFF;
+    color: #C0392B;
+    border: 2px solid #C0392B;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* ---------- HYPERLINKS: unvisited, visited, hover ---------- */
+
+a:link {
+    color: #8FD3CA;
+}
+
+a:visited {
+    color: #E0B0FF;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+/* Keep the Contact Us button text white whether or not it has been clicked */
+a.contact-btn:link,
+a.contact-btn:visited {
+    color: #FFFFFF;
+}
+
+/* ---------- HOMEWORK 2 ADDITIONS ---------- */
+
+.label-cell {
+    width: 150px;
+    white-space: nowrap;
+}
+
+.error-cell {
+    width: 230px;
+}
+
+/* Error message text beside a field */
+.error {
+    display: block;
+    color: #C0392B;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Field that failed a check gets a red border */
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border: 2px solid #C0392B;
+    background-color: #FDF2F1;
+}
+
+.medium {
+    width: 130px;
+}
+
+/* Live value beside the slider */
+.slider-value {
+    display: inline-block;
+    min-width: 140px;
+    margin-left: 8px;
+    font-weight: bold;
+    color: #1F3A5F;
+}
+
+/* Live password checklist */
+.pw-rules {
+    list-style: none;
+    margin: 6px 0 0 0;
+    padding-left: 4px;
+    font-size: 11px;
+    color: #777777;
+}
+
+.rule-ok {
+    color: #1E8449;
+}
+
+.rule-ok::before {
+    content: "\2713  ";            /* check mark */
+}
+
+.rule-bad {
+    color: #C0392B;
+}
+
+.rule-bad::before {
+    content: "\2717  ";            /* x mark */
+}
+
+#reviewBtn {
+    background-color: #2A9D8F;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px 24px;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+/* Review area: hidden until the REVIEW button fills it */
+#reviewArea {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px 20px 20px;
+    border: 2px solid #2A9D8F;
+    border-radius: 8px;
+    background-color: #F7FBFA;
+}
+
+#reviewArea h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1F3A5F;
+    text-align: center;
+    margin: 14px 0 6px 0;
+}
+
+.review-table {
+    width: 100%;
+}
+
+.review-table td {
+    border-bottom: 1px solid #DCE6F1;
+    vertical-align: top;
+}
+
+.rv-label {
+    width: 30%;
+    font-weight: bold;
+}
+
+.rv-value {
+    width: 40%;
+}
+
+/* Links inside the light review box need darker colors than the footer links */
+#reviewArea a:link,
+#reviewArea a:visited {
+    color: #1F3A5F;
+}
+
+.pass {
+    color: #1E8449;
+    font-weight: bold;
+}
+
+.fail {
+    color: #C0392B;
+    font-weight: bold;
+}
+
+/* End of style.css */

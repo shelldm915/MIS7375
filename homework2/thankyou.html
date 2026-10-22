@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Program name: thankyou.html
+Author: Sheldon McNeal
+Date created: 09/29/2026
+Date last edited: 10/23/2026
+Version: 2.0
+Description: MIS 7375 Homework 2. Confirmation page shown after the patient registration form
+             is submitted. Uses the same banner, footer, and style sheet as homework2.html.
+AI disclosure: Drafted with assistance from Claude (Anthropic); reviewed and edited by Sheldon McNeal.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bayou City Urgent Care - Thank You</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ===================== TOP: BANNER DIVISION ===================== -->
+    <div id="banner">
+        <table class="layout">
+            <tr>
+                <td class="banner-logo">
+                    <img id="logo" src="logo.png" alt="Bayou City Urgent Care logo" />
+                </td>
+                <td class="banner-name">
+                    <h1>Bayou City Urgent Care</h1>
+                    <p class="tagline">Walk-ins welcome, 7 days a week</p>
+                </td>
+                <td class="banner-date">
+                    Today is: <span id="today">date goes here</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ===================== MIDDLE: MESSAGE DIVISION ===================== -->
+    <div id="main">
+        <h2>Thank you for your submission.</h2>
+        <p>Your registration has been received. Please check in at the front desk when you arrive.</p>
+        <p><a href="homework2.html">Back to the registration form</a></p>
+    </div>
+
+    <!-- ===================== BOTTOM: FOOTER DIVISION ===================== -->
+    <div id="footer">
+        <table class="layout">
+            <tr>
+                <td class="footer-address">
+                    <strong>Bayou City Urgent Care</strong><br />
+                    PO Box 55123<br />
+                    Houston, TX 77255
+                </td>
+                <td class="footer-contact">
+                    <a class="contact-btn" href="mailto:frontdesk@bayoucityurgentcare.example">CONTACT US</a>
+                </td>
+                <td class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Dynamic date, same as the form page -->
+    <script>
+        document.getElementById("today").innerHTML = new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+    </script>
+
+</body>
+</html>
+<!-- End of thankyou.html -->
